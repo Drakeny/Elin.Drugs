@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+  <title>Drugs</title>
+  <id>drakenydev_elin_drugs</id>
+  <author>Drakeny</author>
+  <builtin>false</builtin>
+  <loadPriority>200</loadPriority>
+  <version>0.23.67 h4</version>
+  <tags>General,Items</tags>
+  <description>
+[b]Drugs![/b]  
+This mod introduces a set of nine performance boosting drugs masterfully crafted to bring out your best on a moments notice—at a cost. 
+
+[h1]Features[/h1]  
+[list]  
+[*][b]Nine Unique Drugs[/b]: Each tailored to boost a specific attribute:
+[list]
+   [*] [b]Bulkadrol[/b]: Boost your [i]Strength[/i] and feel unstoppable.  
+   [*] [b]Endurafix[/b]: Increase your [i]Endurance[/i] to outlast any challenge.  
+   [*] [b]Flexine[/b]: Sharpen your [i]Dexterity[/i] for unparalleled precision.  
+   [*] [b]Focusol[/b]: Amplify your [i]Perception[/i] to stay one step ahead.  
+   [*] [b]Cognivance[/b]: Elevate your [i]Intelligence[/i] for smarter plays.  
+   [*] [b]Willastrol[/b]: Fortify your [i]Willpower[/i] to resist adversity.  
+   [*] [b]Thaumidrin[/b]: Empower your [i]Magic[/i] for devastating spells.  
+   [*] [b]Allurix[/b]: Enhance your [i]Charisma[/i] to charm your way to success.  
+   [*] [b]Hastirin[/b]: Supercharge your [i]Speed[/i] to move like the wind.  
+[/list]
+[*][b]Addiction[/b]:  
+   - Their great effectiveness comes with downsides, Drug usage will add an [i]Addiction Feat[/i], which evolves across three levels the more you consume them.
+   [list]
+   [*] Addiction slowly dissipates every in-game day.
+   [*] At higher levels, addiction increases your chances of withdrawal.
+   [/list]
+   [*] [b]Withdrawal[/b] 
+   - A unique condition that have a small chance to be inflicted you at any moment while you have the addiction trait.
+   [list]
+   [*] The effects of withdrawal range from nothing to bad effects to small positive effects. (In order, from highest chance to lowest chance)
+   [*] Higher levels addiction increases your chances of withdrawal.
+   [/list]
+[/list]
+
+[h1]Notes[/h1]
+[list]
+[*] Where to find drugs? [spoiler]Ask your local drug dealer.[/spoiler]
+[*] Safe to install on existing save games.
+[*] [b]While CWL will make its best to fix things in case that happens, IT IS NOT ADVISABLE TO REMOVE THIS MOD WHILE CONDITIONS/FEAT ARE PRESENT ON ANY CHARACTER.[/b]
+[/list]
+
+[h2]TODOs[/h2]
+[list]
+[*]Localization
+[*]Further adjustments of values: prices, duration, effect potency. (Feedback is welcome)
+[*]Crafting Drugs
+[/list]
+  </description>
+  <visibility>Unlisted</visibility>
+</Meta>

@@ -9,17 +9,14 @@ public class Patch_CharaTick
     [HarmonyPostfix, HarmonyPatch(typeof(Chara), "Tick")]
     public static void Tick(Chara __instance)
     {
+        if (!__instance.IsPC) return; //Player only for now...
+        if (__instance.elements.GetElement(69420) == null || __instance.HasCondition<ConDrugAbuse>()) return;
         flip = !flip;
         if (flip) return;
-        if (!__instance.IsPC) return;
-        if (EClass.pc.elements.GetElement(69420) == null) return;
-        Element e = EClass.pc.elements.GetElement(69420);
-
-        Plugin.Log.LogMessage("Rolling Withdrawal");
+        Element e = __instance.elements.GetElement(69420);
         if (EClass.rnd(1000) <= e.vBase * 2 && !__instance.HasCondition<ConDrugAbuse>())
         {
-            Plugin.Log.LogMessage("Adding Withdrawal");
-            __instance.AddCondition<ConDrugAbuse>();
+            __instance.AddCondition<ConDrugAbuse>(e.vBase);
         }
 
     }

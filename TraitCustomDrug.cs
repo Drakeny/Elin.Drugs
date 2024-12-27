@@ -34,34 +34,29 @@ class TraitCustomDrug : TraitDrink
                 c.AddCondition<ConSpdDrug>();
                 break;
             case "drugabuse":
-                Plugin.Log.LogMessage("Adding all drugs");
-                c.AddCondition<ConStrDrug>();
-                c.AddCondition<ConEndDrug>();
-                c.AddCondition<ConDexDrug>();
-                c.AddCondition<ConPerDrug>();
-                c.AddCondition<ConLerDrug>();
-                c.AddCondition<ConWilDrug>();
-                c.AddCondition<ConMagDrug>();
-                c.AddCondition<ConChaDrug>();
-                c.AddCondition<ConSpdDrug>();
+                //test
                 break;
             default:
                 break;
         }
 
-        Element e = EClass.pc.elements.GetElement(69420);
-        if (e != null)
+        if (c.IsPC)
         {
-            e.vExp += 250;
-            if (e.vExp >= 1000 && e.vBase < 3)
+            Element e = c.elements.GetElement(69420);
+            if (e != null)
             {
-                EClass.pc.SetFeat(69420, e.vBase + 1, true);
-                e.vExp = 0;
+                e.vExp += 200;
+                if (e.vExp >= (e.vBase + 1) * 1000 && e.vBase < 3)
+                {
+                    c.SetFeat(69420, e.vBase + 1, true);
+                    e.vExp = e.vBase * 1000;
+                }
             }
-        }
-        else
-        {
-            EClass.pc.SetFeat(69420, 1, true);
+            else
+            {
+                c.SetFeat(69420, 1, true);
+                c.elements.GetElement(69420).vExp = 1000;
+            }
         }
     }
 

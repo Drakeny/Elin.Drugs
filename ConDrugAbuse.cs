@@ -2,12 +2,13 @@ using Drugs;
 
 class ConDrugAbuse : BadCondition
 {
-    public override bool CanManualRemove => true;
+    public override bool CanManualRemove => false;
 
     public override string GetText() => "Withdrawal".lang();
 
     public override void Tick()
     {
+        base.Tick();
         GetWithdrawalEffect();
     }
     public void GetWithdrawalEffect()
@@ -16,16 +17,16 @@ class ConDrugAbuse : BadCondition
 
         if (typeRoll <= 90)
         {
-            Plugin.Log.LogMessage("Safe");
         }
         else if (typeRoll <= 98)
         {
-            Plugin.Log.LogMessage("Bad Effect");
+            int msgnum = EClass.rnd(3) + 1;
+            Msg.SetColor(Msg.colors.Negative);
+            Msg.Say($"withdrawal_badeffect{msgnum}".lang());
             GetBadEffect();
         }
         else
         {
-            Plugin.Log.LogMessage("Good Effect");
             GetGoodEffect();
         }
     }
@@ -57,10 +58,15 @@ class ConDrugAbuse : BadCondition
         if (goodEffectRoll <= 70)
         {
             //effect
+            Msg.SetColor(Msg.colors.Ono);
+            Msg.Say($"withdrawal_goodeffect2".lang());
+            owner.sleepiness.Mod(owner.HasElement(69420) ? owner.elements.GetElement(69420).vBase * -5 : -5);
         }
         else
         {
             //effect
+            Msg.SetColor(Msg.colors.Ono);
+            Msg.Say($"withdrawal_goodeffect1".lang());
             owner.stamina.Mod(owner.HasElement(69420) ? owner.elements.GetElement(69420).vBase * 5 : 5);
         }
     }
